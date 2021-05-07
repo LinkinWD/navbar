@@ -18,11 +18,12 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  margin-bottom: 10px;
 }
 
 nav {
   width: 100vw;
-  background: chartreuse;
+  background: #e0e0e0;
   padding: 15px;
 }
 
@@ -48,7 +49,7 @@ nav {
 
 .mobile-links {
   width: 100%;
-  background-color: red;
+  display: none;
 }
 
 .nav-list,
@@ -70,38 +71,46 @@ nav {
 }
 
 .mobile-item {
-  margin: 20px;
-}
-
-.nav-item,
-.mobile-item {
+  margin-bottom: 1000px;
   text-decoration: none;
   padding: 5px 10px;
-  color: white;
   background: black;
-  margin-right: 5px;
-  border-radius: 5px;
+  color: white;
+  font-size: .8rem;
 }
 
-.nav-selector {
-  display: none;
+.nav-item {
+  text-decoration: none;
+  margin-left: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #e0e0e0;
+  -webkit-box-shadow: 5px 5px 10px #b8b7b7, -5px -5px 20px #ebebeb;
+          box-shadow: 5px 5px 10px #b8b7b7, -5px -5px 20px #ebebeb;
 }
 
 .search-form {
   position: relative;
   margin-left: auto;
+  margin-right: 20px;
 }
 
 .search-form input {
-  padding: 5px 10px;
+  padding: 10px 20px;
   border-radius: 15px;
+  border: none;
   outline: none;
+  border-radius: 10px;
+  background: #e0e0e0;
+  -webkit-box-shadow: inset 5px 5px 10px #b8b7b7, inset -10px -10px 20px #ebebeb;
+          box-shadow: inset 5px 5px 10px #b8b7b7, inset -10px -10px 20px #ebebeb;
 }
 
 .search-form label {
   position: absolute;
   left: 20px;
-  top: 5px;
+  top: 10px;
+  font-size: 0.8rem;
   -webkit-transition: all 1s;
   transition: all 1s;
 }
@@ -109,8 +118,14 @@ nav {
 .search-form input:focus + label {
   -webkit-transition: all 1s;
   transition: all 1s;
-  -webkit-transform: translateX(-150px);
-          transform: translateX(-150px);
+  -webkit-transform: translateX(-80px);
+          transform: translateX(-80px);
+}
+
+.hamburger {
+  font-size: 2rem;
+  margin-right: 20px;
+  display: none;
 }
 
 section {
@@ -119,19 +134,22 @@ section {
 }
 
 @media only screen and (max-width: 900px) {
-  nav {
-    background: blue;
-  }
   .nav-links {
     display: none;
   }
-  .nav-selector {
+  .hamburger {
     display: inline-block;
   }
 }
 
 @media only screen and (max-width: 650px) {
   .nav-selector {
+    display: none;
+  }
+  .mobile-links {
+    display: inline-block;
+  }
+  .hamburger {
     display: none;
   }
 }
